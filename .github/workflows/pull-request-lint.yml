@@ -1,0 +1,39 @@
+name: Lint on pull request
+'on':
+  pull_request:
+    branches:
+      - main
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint_dir: src/
+          eslint_extensions: js,jsx,ts,tsx
+          eslint: true
+          prettier: false
+          continue_on_error: false
+
+  build:
+    name: Build
+    needs: run-linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm ci && npm run-script build
