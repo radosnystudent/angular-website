@@ -3,7 +3,12 @@ pull_request_rules:
     conditions:
       - "#approved-reviews-by>=1"
       - base = master
-      - check-success=Lint on pull request
+      - check-success=Analyze (javascript)
+      - check-success=CodeQL
+      - check-success=ESLint
+      - check-success=Build
+      - check-success=Run linters
+      
     actions:
       merge:
         method: rebase
