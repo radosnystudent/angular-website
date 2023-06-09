@@ -2,7 +2,7 @@ name: Lint on pull request
 'on':
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   run-linters:
     name: Run linters
