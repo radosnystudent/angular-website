@@ -3,6 +3,10 @@
   "ignorePatterns": [
     "projects/**/*"
   ],
+  "env": {
+    "es6": true,
+    "node": true
+ },
   "overrides": [
     {
       "files": [

@@ -1,0 +1,10 @@
+{
+    "en": {
+        "menu.homepage": "Homepage",
+        "menu.about": "About"
+    },
+    "pl": {
+        "menu.homepage": "Strona główna",
+        "menu.about": "O mnie"
+    }
+}
