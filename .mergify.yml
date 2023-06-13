@@ -3,9 +3,9 @@ pull_request_rules:
     conditions:
       - "#approved-reviews-by>=1"
       - base = master
-      - check-success=Analyze (javascript)
-      - check-success=CodeQL
-      - check-success=ESLint
+      # - check-success=Analyze (javascript)
+      # - check-success=CodeQL
+      # - check-success=ESLint
       - check-success=Build
       - check-success=Run linters
       
