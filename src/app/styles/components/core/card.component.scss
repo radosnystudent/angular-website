@@ -1,0 +1,16 @@
+@import "../../colors.scss";
+@import "../../layout.scss";
+
+.card {
+    color: $white-color;
+    padding: $base-padding;
+
+    .mat-mdc-card {
+        background-color: $alternative-dark-blue-color;
+        padding: $base-padding-2x;
+    }
+
+    .mat-mdc-card-title, .mat-mdc-card-subtitle {
+        font-size: $main-font-size;
+    }
+}

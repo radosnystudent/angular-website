@@ -1,0 +1,35 @@
+@import "../../layout.scss";
+@import "../../colors.scss";
+
+.about-me {
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        div {
+            margin: $base-padding 0;
+        }
+
+        &_text {
+            color: $yellow-color;
+            font-size: $main-font-size;
+            max-width: 500px;
+            word-break: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            padding: 0 $base-padding-3x;
+
+            &--active {
+                color: $orange-color;
+            }
+        }
+    }
+
+    img {
+        width: 300px;
+        height: 300px;
+        border-radius: 25%;
+        padding: $base-padding;
+    }
+}

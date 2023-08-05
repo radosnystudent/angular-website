@@ -1,1 +1,10 @@
-<sw-card [title]="'About me'"></sw-card>
+<sw-card class="about-me" [title]="'aboutpage.title'">
+    <div card-contet class="about-me__container">
+        <img [src]="image.path" [alt]="image.alt"/>
+        <div class="about-me__container_text">
+            <div class="about-me__container_text--active">{{'aboutpage.aboutMe.part1' | translate}}</div>
+            <div>{{'aboutpage.aboutMe.part2' | translate}}</div>
+            <div>{{'aboutpage.aboutMe.part3' | translate}}</div>
+        </div>
+    </div>
+</sw-card>

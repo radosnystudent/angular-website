@@ -1,0 +1,28 @@
+@import "./colors.scss";
+@import "./layout.scss";
+
+.app-navbar {
+    display: flex;
+    width: 100%;
+    background-color: $main-dark-blue-color;
+
+    a {
+        border-bottom: $border-width $border-light-color solid;
+        padding: 0 $base-padding;
+        margin: 0 $base-padding;
+    }
+
+    .mat-mdc-tab-link .mdc-tab__text-label {
+        color: $orange-color;
+        font-size: $title-font-size;
+    }
+
+    .mat-mdc-tab-link:hover .mdc-tab__text-label {
+        color: $yellow-color;
+    }
+
+    .flag {
+        font-size: $main-font-size;
+        cursor: pointer;
+    }
+}

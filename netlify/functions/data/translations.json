@@ -1,11 +1,19 @@
 {
     "en": {
         "homepage.title": "Homepage",
+        "aboutpage.title": "About me",
+        "aboutpage.aboutMe.part1": "Hello. My name is Jeremiasz Pauszek.",
+        "aboutpage.aboutMe.part2": "I'm frontend developer with some experience in backend aswell.",
+        "aboutpage.aboutMe.part3": "Currently I'm working with Angular and Java but I've touched also React and Python.",
         "navigation.homepage": "Homepage",
         "navigation.aboutMe": "About me"
     }, 
     "pl": {
         "homepage.title": "Strona główna",
+        "aboutpage.title": "O mnie",
+        "aboutpage.aboutMe.part1": "Cześć. Mam na imię Jeremiasz Pauszek.",
+        "aboutpage.aboutMe.part2": "Jestem frontend developerem z doświadczeniem pracy z backendem.",
+        "aboutpage.aboutMe.part3": "Obecnie pracuję w technologiach Angular + Java, ale miałem styczność także z Reactem i Pythonem.",
         "navigation.homepage": "Strona główna",
         "navigation.aboutMe": "O mnie"
     }

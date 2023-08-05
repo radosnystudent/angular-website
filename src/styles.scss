@@ -1,14 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "./app/styles/app.component.scss";
-@import "./app/styles/main-app/main-app.component.scss";
+@import "./app/styles/pages/main-app/main-app.component.scss";
+@import "./app/styles/pages/about-me/about-me.component.scss";
+@import "./app/styles/colors.scss";
+@import "./app/styles/layout.scss";
+@import "./app/styles/components/core/card.component.scss";
 
 html {
-    max-width: 70ch;
-    padding: 3em 1em;
+    // max-width: 70ch;
+    padding: 1em 1em;
     margin: auto;
     line-height: 1.75;
     font-size: 1.25em;
+    background-color: $main-dark-blue-color;
     // min-height: 100%;
 }
 

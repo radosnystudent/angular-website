@@ -1,9 +1,9 @@
-<nav class="sw__app-navbar">
-  <ul>
-    <li><a routerLink="/main" routerLinkActive="active" ariaCurrentWhenActive="page">{{'navigation.homepage' | translate}}</a></li>
-    <li><a routerLink="/about-me" routerLinkActive="active" ariaCurrentWhenActive="page">{{'navigation.aboutMe' | translate}}</a></li>
-  </ul>
+<nav class="app-navbar" mat-tab-nav-bar animationDuration="1500ms" [tabPanel]="tabPanel">
+  <a mat-tab-link routerLink="/main" routerLinkActive="active" ariaCurrentWhenActive="page">{{'navigation.homepage' | translate}}</a>
+  <a mat-tab-link routerLink="/about-me" routerLinkActive="active" ariaCurrentWhenActive="page">{{'navigation.aboutMe' | translate}}</a>
   <span class="flag" [ngClass]="currentLanguage === 'en' ? 'fi fi-gb' : 'fi fi-pl'" (click)="switchLanguage()"></span>
 </nav>
 
-<router-outlet></router-outlet>
+<mat-tab-nav-panel #tabPanel>
+  <router-outlet></router-outlet>
+</mat-tab-nav-panel>
