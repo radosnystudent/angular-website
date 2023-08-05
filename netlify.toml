@@ -1,8 +1,10 @@
 # netlify.toml
 [build]
-  functions = "functions/"
+  functions = "netlify/functions"
+  publish = "dist/angular-website"
+  command = "ng build --prod"
 
 [[redirects]]
-  from = '/api/*'
-  to = '/.netlify/functions/:splat'
+  from = '/*'
+  to = 'index.html'
   status = 200

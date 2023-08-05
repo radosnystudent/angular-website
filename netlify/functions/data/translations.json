@@ -1,0 +1,12 @@
+{
+    "en": {
+        "homepage.title": "Homepage",
+        "navigation.homepage": "Homepage",
+        "navigation.aboutMe": "About me"
+    }, 
+    "pl": {
+        "homepage.title": "Strona główna",
+        "navigation.homepage": "Strona główna",
+        "navigation.aboutMe": "O mnie"
+    }
+}
