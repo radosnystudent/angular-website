@@ -2,6 +2,9 @@
 @import "../../layout.scss";
 
 .card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     color: $highlighted-text-color;
     padding: $base-padding;
 
@@ -13,5 +16,11 @@
 
     .mat-mdc-card-title, .mat-mdc-card-subtitle {
         font-size: $main-font-size;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .card {
+        padding: 0;
     }
 }

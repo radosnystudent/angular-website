@@ -23,8 +23,11 @@ export class PizzaCalculatorComponent {
   form: FormGroup<PizzaForm>;
 
   result!: {
-    firstPizzaWin: boolean;
-    secoundPizzaWin: boolean;
+    firstPizzaSize: string;
+    firstPizzaPricePerSlice: string;
+    secondPizzaSize: string;
+    secondPizzaPricePerSlice: string;
+    text: string;
   };
 
   private readonly PI = 3.1415;
@@ -53,8 +56,14 @@ export class PizzaCalculatorComponent {
     );
 
     this.result = {
-      firstPizzaWin: finalCostFirstPizza <= finalCostSecondPizza,
-      secoundPizzaWin: finalCostSecondPizza <= finalCostFirstPizza,
+      text: this.getPizzaCalculationResult(
+        finalCostFirstPizza,
+        finalCostSecondPizza
+      ),
+      firstPizzaSize: this.getPizzaSize('diameter1', 'quantity1').toFixed(2),
+      firstPizzaPricePerSlice: finalCostFirstPizza.toFixed(12),
+      secondPizzaSize: this.getPizzaSize('diameter2', 'quantity2').toFixed(2),
+      secondPizzaPricePerSlice: finalCostSecondPizza.toFixed(12),
     };
   }
 
@@ -91,5 +100,18 @@ export class PizzaCalculatorComponent {
 
   private getPizzaRadius(index: 'diameter1' | 'diameter2'): number {
     return (this.form.controls[index].value ?? 0) / 2;
+  }
+
+  private getPizzaCalculationResult(
+    finalCostFirstPizza: number,
+    finalCostSecondPizza: number
+  ): string {
+    if (finalCostFirstPizza === finalCostSecondPizza) {
+      return 'pizzapage.field.value.draw';
+    } else if (finalCostFirstPizza < finalCostSecondPizza) {
+      return 'pizzapage.field.value.firstPizza';
+    } else {
+      return 'pizzapage.field.value.secondPizza';
+    }
   }
 }

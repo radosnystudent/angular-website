@@ -12,7 +12,7 @@
         }
 
         &_text {
-            color: $black-color;
+            color: $main-text-color;
             font-size: $main-font-size;
             max-width: 500px;
             word-break: normal;
@@ -21,7 +21,7 @@
             padding: 0 $base-padding-3x;
 
             &--active {
-                color: $black-color;
+                color: $highlighted-text-color;
             }
         }
     }
@@ -31,5 +31,22 @@
         height: 300px;
         border-radius: 25%;
         padding: $base-padding;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .about-me {
+        &__container {
+            margin-top: $base-padding-2x;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
     }
 }

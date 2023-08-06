@@ -12,15 +12,39 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        .pizza-calculator__container {
+            display: flex;
+            align-items: center;
+            justify-content: center;    
+
+            .pizza-calculator__form-column {
+                display: flex;
+                flex-direction: column;
+                padding: $base-padding-2x;
+            }
+        }
     }
 
-    td {
-        padding: $base-padding $base-padding-3x;
+    &__form-row {
+        .mat-mdc-form-field {
+            padding: $base-padding $base-padding-2x;
+        }
     }
 
     &__buttons {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media screen and (max-width:960px) {
+    .pizza-calculator {
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }

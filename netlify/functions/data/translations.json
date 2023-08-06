@@ -13,7 +13,10 @@
         "pizzapage.input.quantity": "Number of pizzas",
         "pizzapage.header.pizza":"Which pizza is more worth buying",
         "pizzapage.button.calculate": "Calculate",
-        "pizzapage.field.label.pizzaResult": "Pizza winner: "
+        "pizzapage.field.label.pizzaResult": "Pizza winner: ",
+        "pizzapage.field.value.draw": "Both are the same!",
+        "pizzapage.field.value.firstPizza": "First option is better!",
+        "pizzapage.field.value.secondPizza": "Second option is better!"
     }, 
     "pl": {
         "homepage.title": "Strona główna",
@@ -29,6 +32,9 @@
         "pizzapage.input.quantity": "Ilość pizzy",
         "pizzapage.header.pizza":"Która pizza jest bardziej opłacalna",
         "pizzapage.button.calculate": "Oblicz",
-        "pizzapage.field.label.pizzaResult": "Zwycięska pizza: "
+        "pizzapage.field.label.pizzaResult": "Zwycięska pizza: ",
+        "pizzapage.field.value.draw": "Obie opcje są równe!",
+        "pizzapage.field.value.firstPizza": "Pierwsza opcja jest lepsza!",
+        "pizzapage.field.value.secondPizza": "Druga opcja jest lepsza!"
     }
 }

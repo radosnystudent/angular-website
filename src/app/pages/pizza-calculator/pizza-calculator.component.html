@@ -1,36 +1,24 @@
 <sw-card class="pizza-calculator" [title]="'pizzapage.header.pizza'">
-  <form [formGroup]="form">
-    <table [cellSpacing]="0">
-      <tr>
-        <td>
+  <div content>
+    <form [formGroup]="form">
+      <div class="pizza-calculator__container">
+        <div class="pizza-calculator__form-column">
           <sw-number-input [label]="'pizzapage.input.diameter'" formControlName="diameter1"></sw-number-input>
-        </td>
-        <td>
-          <sw-number-input [label]="'pizzapage.input.diameter'" formControlName="diameter2"></sw-number-input>
-        </td>
-      </tr>
-      <tr>
-        <td>
           <sw-number-input [label]="'pizzapage.input.price'" formControlName="price1"></sw-number-input>
-        </td>
-        <td>
-          <sw-number-input [label]="'pizzapage.input.price'" formControlName="price2"></sw-number-input>
-        </td>
-      </tr>
-      <tr>
-        <td>
           <sw-number-input [label]="'pizzapage.input.quantity'" formControlName="quantity1"></sw-number-input>
-        </td>
-        <td>
+        </div>
+        <div class="pizza-calculator__form-column">
+          <sw-number-input [label]="'pizzapage.input.diameter'" formControlName="diameter2"></sw-number-input>
+          <sw-number-input [label]="'pizzapage.input.price'" formControlName="price2"></sw-number-input>
           <sw-number-input [label]="'pizzapage.input.quantity'" formControlName="quantity2"></sw-number-input>
-        </td>
-      </tr>
-    </table>
-    <div class="pizza-calculator__buttons">
-      <sw-button [label]="'pizzapage.button.calculate'" [type]="'raised'" [disabled]="form.invalid" (clicked)="calculate()"></sw-button>
-    </div>
-    <div *ngIf="result">
-      <sw-card-field [label]="'pizzapage.field.label.pizzaResult'" [value]="result.firstPizzaWin ? 'first' : 'second'"></sw-card-field>
-    </div>
-  </form>
+        </div>
+      </div>
+      <div class="pizza-calculator__buttons">
+        <sw-button [label]="'pizzapage.button.calculate'" [type]="'raised'" [disabled]="form.invalid" (clicked)="calculate()"></sw-button>
+      </div>
+      <div *ngIf="result">
+        <sw-card-field [label]="'pizzapage.field.label.pizzaResult'" [value]="result.text | translate"></sw-card-field>
+      </div>
+    </form>
+  </div>
 </sw-card>
