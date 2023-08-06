@@ -2,7 +2,7 @@
 [build]
   functions = "netlify/functions"
   publish = "dist/angular-website"
-  command = "ng build --prod"
+  command = "ng build --configuration production"
 
 [[redirects]]
   from = '/*'
