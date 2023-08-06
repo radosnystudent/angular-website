@@ -1,6 +1,11 @@
-<nav class="app-navbar" mat-tab-nav-bar animationDuration="1500ms" [tabPanel]="tabPanel">
-  <a mat-tab-link routerLink="/main" routerLinkActive="active" ariaCurrentWhenActive="page">{{'navigation.homepage' | translate}}</a>
-  <a mat-tab-link routerLink="/about-me" routerLinkActive="active" ariaCurrentWhenActive="page">{{'navigation.aboutMe' | translate}}</a>
+<nav ngClass="app-navbar" mat-tab-nav-bar animationDuration="2000ms" [tabPanel]="tabPanel" [color]="'warn'">
+  <a *ngFor="let link of navLinks" mat-tab-link 
+  routerLink="{{link.location}}" routerLinkActive ariaCurrentWhenActive="page"
+  #rla="routerLinkActive" [active]="rla.isActive">
+    <mat-icon *ngIf="showNavIcon" matTooltip="{{link.translation | translate}}">{{link.icon}}</mat-icon>
+    <span *ngIf="!showNavIcon">{{link.translation| translate}}</span>
+</a>
+
   <span class="flag" [ngClass]="currentLanguage === 'en' ? 'fi fi-gb' : 'fi fi-pl'" (click)="switchLanguage()"></span>
 </nav>
 

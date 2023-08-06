@@ -29,7 +29,7 @@ export class TranslationService {
 
   translate(key: string): string {
     if (this.translations[this.language]) {
-      return this.translations[this.language][key];
+      return this.translations[this.language][key] ?? key;
     }
     return key;
   }

@@ -3,9 +3,11 @@
 @import "./app/styles/app.component.scss";
 @import "./app/styles/pages/main-app/main-app.component.scss";
 @import "./app/styles/pages/about-me/about-me.component.scss";
+@import "./app/styles/pages/pizza-calculator/pizza-calculator.component.scss";
 @import "./app/styles/colors.scss";
 @import "./app/styles/layout.scss";
 @import "./app/styles/components/core/card.component.scss";
+@import "./app/styles/components/core/card-field.component.scss";
 
 html {
     // max-width: 70ch;
@@ -13,7 +15,8 @@ html {
     margin: auto;
     line-height: 1.75;
     font-size: 1.25em;
-    background-color: $main-dark-blue-color;
+    // background: linear-gradient(180deg, #030423, 50%, #119dff, 5%, #04fafd);
+    background: linear-gradient(0deg, #04fafd, 5%, #119dff, 50%, #030423);
     // min-height: 100%;
 }
 
@@ -23,9 +26,33 @@ h1,h2,h3,h4,h5,h6 {
 
 nav,p,ul,ol {
     margin-bottom: 2em;
-    color: #1d1d1d;
     font-family: sans-serif;
 }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.loader-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid $highlighted-text-color;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

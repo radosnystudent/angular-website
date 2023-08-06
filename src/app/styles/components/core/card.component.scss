@@ -2,12 +2,13 @@
 @import "../../layout.scss";
 
 .card {
-    color: $white-color;
+    color: $highlighted-text-color;
     padding: $base-padding;
 
     .mat-mdc-card {
-        background-color: $alternative-dark-blue-color;
+        background-color: transparent;
         padding: $base-padding-2x;
+        border-width: 1px;
     }
 
     .mat-mdc-card-title, .mat-mdc-card-subtitle {

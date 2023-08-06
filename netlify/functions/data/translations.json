@@ -6,7 +6,14 @@
         "aboutpage.aboutMe.part2": "I'm frontend developer with some experience in backend aswell.",
         "aboutpage.aboutMe.part3": "Currently I'm working with Angular and Java but I've touched also React and Python.",
         "navigation.homepage": "Homepage",
-        "navigation.aboutMe": "About me"
+        "navigation.aboutMe": "About me",
+        "navigation.pizzaCalculator": "Pizza worth calculator",
+        "pizzapage.input.price": "Price (in EUR)",
+        "pizzapage.input.diameter": "Pizza size (in cm)",
+        "pizzapage.input.quantity": "Number of pizzas",
+        "pizzapage.header.pizza":"Which pizza is more worth buying",
+        "pizzapage.button.calculate": "Calculate",
+        "pizzapage.field.label.pizzaResult": "Pizza winner: "
     }, 
     "pl": {
         "homepage.title": "Strona główna",
@@ -15,6 +22,13 @@
         "aboutpage.aboutMe.part2": "Jestem frontend developerem z doświadczeniem pracy z backendem.",
         "aboutpage.aboutMe.part3": "Obecnie pracuję w technologiach Angular + Java, ale miałem styczność także z Reactem i Pythonem.",
         "navigation.homepage": "Strona główna",
-        "navigation.aboutMe": "O mnie"
+        "navigation.aboutMe": "O mnie",
+        "navigation.pizzaCalculator": "Kalkulator opłacalności pizzy",
+        "pizzapage.input.price": "Cena (w PLN)",
+        "pizzapage.input.diameter": "Rozmiar pizzy (w cm)",
+        "pizzapage.input.quantity": "Ilość pizzy",
+        "pizzapage.header.pizza":"Która pizza jest bardziej opłacalna",
+        "pizzapage.button.calculate": "Oblicz",
+        "pizzapage.field.label.pizzaResult": "Zwycięska pizza: "
     }
 }

@@ -1,0 +1,4 @@
+<button *ngIf="type === 'default'" mat-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
+<button *ngIf="type === 'raised'" mat-raised-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
+<button *ngIf="type === 'flat'" mat-flat-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
+<button *ngIf="type === 'stroked'" mat-stroked-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>

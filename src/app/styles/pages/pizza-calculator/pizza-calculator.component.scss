@@ -1,0 +1,26 @@
+@import "../../layout.scss";
+
+.pizza-calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    form {
+        padding: $base-padding-4x $base-padding;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    td {
+        padding: $base-padding $base-padding-3x;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

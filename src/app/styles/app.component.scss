@@ -4,22 +4,48 @@
 .app-navbar {
     display: flex;
     width: 100%;
-    background-color: $main-dark-blue-color;
+    // background-color: $main-dark-color;
+    // color: $orange-color;
 
     a {
-        border-bottom: $border-width $border-light-color solid;
+        // border-bottom: $border-width $border-light-color solid;
         padding: 0 $base-padding;
         margin: 0 $base-padding;
+        font-size: $title-font-size;
+
+        .mat-icon {
+            font-size: $title-font-size;
+            height: 100%;
+            width: 100%;
+        }
     }
 
     .mat-mdc-tab-link .mdc-tab__text-label {
-        color: $orange-color;
-        font-size: $title-font-size;
+        color: $white-color;
     }
 
-    .mat-mdc-tab-link:hover .mdc-tab__text-label {
-        color: $yellow-color;
-    }
+    // .mat-mdc-tab-link.mdc-tab--active .mdc-tab__text-label {
+    //     color: $yellow-color;
+    //     border-bottom: $border-width $border-light-color solid;
+    // }
+
+    // .mat-mdc-tab-link.mdc-tab--active:hover .mdc-tab__text-label {
+    //     color: $light-yellow-color;
+    //     border-bottom: $border-width $border-light-color solid;
+    // }
+
+    // .mat-mdc-tab-link .mdc-tab__text-label {
+    //     color: $orange-color;
+    // }
+
+    // .mat-mdc-tab-link:hover .mdc-tab__text-label {
+    //     color: $yellow-color;
+    //     border-bottom: $border-width $border-light-color solid;
+    // }
+
+    // .mat-mdc-tab-link .mdc-tab-indicator__content--underline {
+    //     border-color: $alternative-light-blue-color;
+    // }
 
     .flag {
         font-size: $main-font-size;

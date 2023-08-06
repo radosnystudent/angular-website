@@ -1,0 +1,28 @@
+@import "../../colors.scss";
+@import "../../layout.scss";
+
+.card-field {
+    display: flex;
+    margin: $base-padding-4x $base-padding;
+
+    &__label-container {
+        display: flex;
+        flex-direction: column;
+        margin-right: $base-padding;
+    }
+
+    &__label {
+        color: $main-text-color;
+        font-size: $main-font-size;
+
+        &-description {
+            font-size: $description-font-size;
+            color: $border-light-color;
+        }
+    }
+
+    &__value {
+        color: $highlighted-text-color;
+        font-size: $field-value-font-size;
+    }
+}
