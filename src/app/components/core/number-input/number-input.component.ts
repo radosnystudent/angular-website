@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ValueAccessorDirective } from 'src/app/common/directives';
 
 @Component({
   selector: 'sw-number-input',
@@ -12,45 +13,22 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
       useExisting: NumberInputComponent,
     },
   ],
+  hostDirectives: [ValueAccessorDirective],
 })
-export class NumberInputComponent implements ControlValueAccessor {
+export class NumberInputComponent {
   @Input({ required: true }) label!: string;
 
-  value!: number;
-  disabled = false;
+  value: number | undefined;
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onChange = (value: number) => {};
-
-  onTouched = () => {};
-
-  constructor() {}
+  constructor(public valueAccessor: ValueAccessorDirective<number>) {}
 
   onValueChange(event: KeyboardEvent): void {
-    if (this.disabled) {
+    if (this.valueAccessor.disabled) {
       return;
     }
-    this.value = (event.target as HTMLInputElement).value as unknown as number;
-    this.onChange(this.value);
-  }
+    const value = (event.target as HTMLInputElement).value as unknown as number;
 
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: any): void {
-    this.onTouched = fn;
-  }
-
-  setDisabledState(isDisabled: boolean): void {
-    this.disabled = isDisabled;
-  }
-
-  writeValue(value: number): void {
-    this.value = value;
-  }
-
-  markAsTouched(): void {
-    this.onTouched();
+    this.valueAccessor.valueChange(value);
+    this.valueAccessor.touchedChange(true);
   }
 }

@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Handler, HandlerContext, HandlerEvent } from '@netlify/functions';
 import translations from './data/translations.json';
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const handler: Handler = async (
-  event: HandlerEvent,
+  _event: HandlerEvent,
   _context: HandlerContext
 ) => {
   return {

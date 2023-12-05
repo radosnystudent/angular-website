@@ -16,8 +16,8 @@ import { Subject } from 'rxjs';
 export class ValueAccessorDirective<T>
   implements ControlValueAccessor, OnDestroy
 {
-  private onChange: any;
-  private onTouched: any;
+  private onChange: ((value: T) => void) | undefined;
+  private onTouched: ((value: boolean) => void) | undefined;
   private valueSubject = new Subject<T>();
   private disabledSubject = new Subject<boolean>();
   readonly value = this.valueSubject.asObservable();
@@ -25,23 +25,23 @@ export class ValueAccessorDirective<T>
 
   constructor() {}
 
-  valueChange(v: T) {
-    this.onChange(v);
+  valueChange(v: T): void {
+    this.onChange?.(v);
   }
 
-  touchedChange(v: boolean) {
-    this.onTouched(v);
+  touchedChange(v: boolean): void {
+    this.onTouched?.(v);
   }
 
-  writeValue(obj: any): void {
+  writeValue(obj: T): void {
     this.valueSubject.next(obj);
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: (value: T) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: (value: boolean) => void): void {
     this.onTouched = fn;
   }
 
