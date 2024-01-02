@@ -5,11 +5,11 @@ import { Component, Input } from '@angular/core';
   templateUrl: './card.component.html',
 })
 export class CardComponent {
-  @Input() title?: string;
+  @Input({ required: false }) title?: string;
 
-  @Input() subtitle?: string;
+  @Input({ required: false }) subtitle?: string;
 
-  @Input() avatar?: string;
+  @Input({ required: false }) avatar?: string;
 
-  @Input() image?: { path: string; alt: string };
+  @Input({ required: false }) image?: { path: string; alt: string };
 }

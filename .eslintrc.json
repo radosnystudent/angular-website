@@ -41,7 +41,8 @@
           {
             "endOfLine": "auto"
           }
-        ]
+        ],
+        "@typescript-eslint/member-ordering": "error"
       }
     },
     {

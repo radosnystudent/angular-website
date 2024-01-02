@@ -11,8 +11,7 @@ import { ThemePalette } from '@angular/material/core';
 })
 export class AppComponent implements OnInit {
   showNavIcon: boolean = false;
-  languages!: string[];
-  currentLanguage!: string;
+  currentLanguage: string = '';
   themePalette: ThemePalette = undefined;
   navLinks = [
     { location: '/main', translation: 'navigation.homepage', icon: 'menu' },
@@ -40,7 +39,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.languages = this.translateService.languages;
     this.currentLanguage = this.translateService.language;
   }
 

@@ -7,11 +7,11 @@ import { Component, Input } from '@angular/core';
 export class CardFieldComponent {
   @Input({ required: true }) label!: string;
 
-  @Input({ required: false }) value!: string | number | null | undefined;
+  @Input({ required: false }) value?: string | number | null | undefined;
 
-  @Input({ required: false }) description!: string;
+  @Input({ required: false }) description?: string;
 
-  @Input({ required: false }) labelClass!: string;
+  @Input({ required: false }) labelClass?: string;
 
-  @Input({ required: false }) valueClass!: string;
+  @Input({ required: false }) valueClass?: string;
 }

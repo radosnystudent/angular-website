@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Directive, OnDestroy, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Directive({
   standalone: true,
@@ -16,14 +15,17 @@ import { Subject } from 'rxjs';
 export class ValueAccessorDirective<T>
   implements ControlValueAccessor, OnDestroy
 {
+  readonly value!: Observable<T>;
+  readonly disabled!: Observable<boolean>;
   private onChange: ((value: T) => void) | undefined;
   private onTouched: ((value: boolean) => void) | undefined;
   private valueSubject = new Subject<T>();
   private disabledSubject = new Subject<boolean>();
-  readonly value = this.valueSubject.asObservable();
-  readonly disabled = this.disabledSubject.asObservable();
 
-  constructor() {}
+  constructor() {
+    this.value = this.valueSubject.asObservable();
+    this.disabled = this.disabledSubject.asObservable();
+  }
 
   valueChange(v: T): void {
     this.onChange?.(v);
