@@ -2,5 +2,18 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "prHourlyLimit": 10,
+  "rebaseWhen": "behind-base-branch",
+  "reviewers": ["radosnystudent"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["patch", "pin"],
+      "automerge": true
+    }
+  ],
+  "prConcurrentLimit": 20,
+  "schedule": [
+    "at any time"
   ]
 }
