@@ -5,13 +5,13 @@ pull_request_rules:
       - base = master
       - check-success=Build
       - check-success=Run linters
+    actions:
+      merge:
+        method: rebase
+
   - name: comment when a pull request cannot be merged
     conditions:
       - conflict
     actions:
       comment:
-        message: @{{author}} Your PR is in conflict and cannot be merged.
-      
-    actions:
-      merge:
-        method: rebase
+        message: "@{{author}} Your PR is in conflict and cannot be merged."
