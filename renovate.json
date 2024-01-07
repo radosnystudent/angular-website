@@ -14,6 +14,6 @@
   ],
   "prConcurrentLimit": 20,
   "schedule": [
-    "at any time"
+    "before 23pm"
   ]
 }

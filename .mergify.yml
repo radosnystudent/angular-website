@@ -3,11 +3,14 @@ pull_request_rules:
     conditions:
       - "#approved-reviews-by>=1"
       - base = master
-      # - check-success=Analyze (javascript)
-      # - check-success=CodeQL
-      # - check-success=ESLint
       - check-success=Build
       - check-success=Run linters
+  - name: comment when a pull request cannot be merged
+    conditions:
+      - conflict
+    actions:
+      comment:
+        message: @{{author}} Your PR is in conflict and cannot be merged.
       
     actions:
       merge:
