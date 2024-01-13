@@ -10,8 +10,13 @@
     {
       "matchUpdateTypes": ["patch", "pin"],
       "automerge": true
+    },
+    {
+      "matchCategories": ["js"],
+      "addLabels": ["npm"]
     }
   ],
+  "labels": ["dependencies"],
   "prConcurrentLimit": 20,
   "schedule": [
     "before 4am"
