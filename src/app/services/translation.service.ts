@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { catchError, lastValueFrom, take, tap, throwError } from 'rxjs';
 import { Languages, Translations } from '../spec';
 
@@ -8,8 +8,7 @@ export class TranslationService {
   public languages: string[] = [Languages.En, Languages.Pl];
   public language: string = Languages.En;
   private translations: Translations = {};
-
-  constructor(private readonly httpClient: HttpClient) {}
+  private readonly httpClient: HttpClient = inject(HttpClient);
 
   initTranslations(): Promise<Translations> {
     const call = this.httpClient

@@ -1,13 +1,32 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { TranslationService } from './services';
 import { Languages } from './spec';
 import { ThemePalette } from '@angular/material/core';
+import { TranslatePipe } from './common/pipes/translate.pipe';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
+import { MatTabsModule } from '@angular/material/tabs';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   encapsulation: ViewEncapsulation.None,
+  standalone: true,
+  imports: [
+    NgClass,
+    MatTabsModule,
+    NgFor,
+    RouterLinkActive,
+    RouterLink,
+    NgIf,
+    MatIconModule,
+    MatTooltipModule,
+    RouterOutlet,
+    TranslatePipe,
+  ],
 })
 export class AppComponent implements OnInit {
   showNavIcon: boolean = false;
@@ -26,11 +45,12 @@ export class AppComponent implements OnInit {
       icon: 'account_circle',
     },
   ];
+  private readonly translateService: TranslationService =
+    inject(TranslationService);
+  private readonly breakpointObserver: BreakpointObserver =
+    inject(BreakpointObserver);
 
-  constructor(
-    private readonly translateService: TranslationService,
-    private readonly breakpointObserver: BreakpointObserver
-  ) {
+  constructor() {
     this.breakpointObserver
       .observe(['(max-width: 960px)'])
       .subscribe((result: BreakpointState) => {

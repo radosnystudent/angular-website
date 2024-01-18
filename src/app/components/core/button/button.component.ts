@@ -1,8 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslatePipe } from '../../../common/pipes/translate.pipe';
+import { MatButtonModule } from '@angular/material/button';
+import { NgIf, NgClass } from '@angular/common';
 
 @Component({
   selector: 'sw-button',
   templateUrl: './button.component.html',
+  standalone: true,
+  imports: [NgIf, MatButtonModule, NgClass, TranslatePipe],
 })
 export class ButtonComponent {
   @Input({ required: true }) label!: string;

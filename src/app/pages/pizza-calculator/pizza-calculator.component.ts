@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
+import { TranslatePipe } from '../../common/pipes/translate.pipe';
+import { CardFieldComponent } from '../../components/core/card/card-field/card-field.component';
+import { NgIf } from '@angular/common';
+import { ButtonComponent } from '../../components/core/button/button.component';
+import { NumberInputComponent } from '../../components/core/number-input/number-input.component';
+import { ValueAccessorDirective } from '../../common/directives/value-accessor.directive';
+import { CardComponent } from '../../components/core/card/card.component';
 
 interface PizzaForm {
   diameter1: FormControl<number | null>;
@@ -18,6 +27,18 @@ interface PizzaForm {
 @Component({
   selector: 'sw-pizza-calculator',
   templateUrl: './pizza-calculator.component.html',
+  standalone: true,
+  imports: [
+    CardComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    ValueAccessorDirective,
+    NumberInputComponent,
+    ButtonComponent,
+    NgIf,
+    CardFieldComponent,
+    TranslatePipe,
+  ],
 })
 export class PizzaCalculatorComponent {
   form: FormGroup<PizzaForm>;
@@ -32,8 +53,10 @@ export class PizzaCalculatorComponent {
 
   private readonly PI = 3.1415;
 
-  constructor(private readonly fb: FormBuilder) {
-    this.form = new FormGroup<PizzaForm>({
+  private readonly fb: FormBuilder = inject(FormBuilder);
+
+  constructor() {
+    this.form = this.fb.group<PizzaForm>({
       diameter1: new FormControl(null, Validators.required),
       price1: new FormControl(null, Validators.required),
       quantity1: new FormControl(null, Validators.required),
