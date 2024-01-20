@@ -31,7 +31,7 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 export class AppComponent implements OnInit {
   showNavIcon: boolean = false;
   currentLanguage: string = '';
-  navLinks = [
+  readonly navLinks = [
     { location: '/main', translation: 'navigation.homepage', icon: 'menu' },
     {
       location: '/pizza',

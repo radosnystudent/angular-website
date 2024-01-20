@@ -1,11 +1,20 @@
 <div class="card">
   <mat-card>
-    <mat-card-header *ngIf="title">
-      <div *ngIf="avatar" mat-card-avatar [class]="avatar"></div>
-      <mat-card-title>{{title | translate}}</mat-card-title>
-      <mat-card-subtitle *ngIf="subtitle">{{subtitle}}</mat-card-subtitle>
-    </mat-card-header>
-    <img *ngIf="image" mat-card-xl-image [src]="image.path" [alt]="image.alt"/>
+    @if (title) {
+      <mat-card-header>
+        @if (avatar) {
+          <div mat-card-avatar [class]="avatar"></div>
+        }
+        <mat-card-title>{{title | translate}}</mat-card-title>
+        @if (subtitle) {
+          <mat-card-subtitle *ngIf="subtitle">{{subtitle}}</mat-card-subtitle>
+        }
+      </mat-card-header>
+    }
+    
+    @if (image) {
+      <img mat-card-xl-image [src]="image.path" [alt]="image.alt"/>
+    }
     <mat-card-content>
       <ng-content select="[content]"></ng-content>
     </mat-card-content>

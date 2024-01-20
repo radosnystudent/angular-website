@@ -1,7 +1,9 @@
 <div class="card-field">
     <div class="card-field__label-container">
         <div class="card-field__label" [ngClass]="labelClass">{{label | translate}}</div>
-        <div *ngIf="description" class="card-field__label-description">{{description | translate}}</div>
+        @if (description) {
+            <div class="card-field__label-description">{{description | translate}}</div>
+        }
     </div>
     <div class="card-field__value" [ngClass]="valueClass">{{value}}</div>
 </div>

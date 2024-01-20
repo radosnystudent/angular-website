@@ -16,9 +16,9 @@
       <div class="pizza-calculator__buttons">
         <sw-button [label]="'pizzapage.button.calculate'" [type]="'raised'" [disabled]="form.invalid" (clicked)="calculate()"></sw-button>
       </div>
-      <div *ngIf="result">
+      @if (result) {
         <sw-card-field [label]="'pizzapage.field.label.pizzaResult'" [value]="result.text | translate"></sw-card-field>
-      </div>
+      }
     </form>
   </div>
 </sw-card>

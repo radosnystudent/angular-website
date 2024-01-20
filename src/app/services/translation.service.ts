@@ -16,13 +16,13 @@ export class TranslationService {
       .pipe(
         take(1),
         catchError(error => {
-          console.log(error);
           return throwError(() => new Error(error));
         }),
         tap((reponse: Translations) => {
           this.translations = reponse;
         })
       );
+
     return lastValueFrom(call);
   }
 
@@ -30,6 +30,7 @@ export class TranslationService {
     if (this.translations[this.language]) {
       return this.translations[this.language][key] ?? key;
     }
+
     return key;
   }
 }

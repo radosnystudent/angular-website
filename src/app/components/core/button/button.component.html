@@ -1,4 +1,14 @@
-<button *ngIf="type === 'default'" mat-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
-<button *ngIf="type === 'raised'" mat-raised-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
-<button *ngIf="type === 'flat'" mat-flat-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
-<button *ngIf="type === 'stroked'" mat-stroked-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
+@switch (type) {
+    @case ('raised') {
+        <button mat-raised-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
+    }
+    @case ('flat') {
+        <button mat-flat-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
+    }
+    @case ('stroked') {
+        <button mat-stroked-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
+    }
+    @default {
+        <button mat-button [color]="color" [disabled]="disabled" [ngClass]="class" (click)="click()">{{label | translate}}</button>
+    }
+}

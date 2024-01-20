@@ -5,8 +5,11 @@
     ariaCurrentWhenActive="page"
     #rla="routerLinkActive" 
     [active]="rla.isActive">
-      <mat-icon *ngIf="showNavIcon" matTooltip="{{link.translation | translate}}">{{link.icon}}</mat-icon>
-      <span *ngIf="!showNavIcon">{{link.translation| translate}}</span>
+      @if (showNavIcon) {
+        <mat-icon matTooltip="{{link.translation | translate}}">{{link.icon}}</mat-icon>
+      } @else {
+        <span>{{link.translation| translate}}</span>
+      }
     </a>
   }
 
