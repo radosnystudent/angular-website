@@ -1,21 +1,21 @@
-@import "../../colors.scss";
-@import "../../layout.scss";
+@use "../../colors.scss";
+@use "../../layout.scss";
 
 .card {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    color: $highlighted-text-color;
-    padding: $base-padding;
+    color: colors.$highlighted-text-color;
+    padding: layout.$base-padding;
 
     .mat-mdc-card {
         background-color: transparent;
-        padding: $base-padding-2x;
+        padding: layout.$base-padding-2x;
         border-width: 1px;
     }
 
     .mat-mdc-card-title, .mat-mdc-card-subtitle {
-        font-size: $main-font-size;
+        font-size: layout.$main-font-size;
     }
 }
 

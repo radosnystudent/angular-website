@@ -1,4 +1,4 @@
-<nav ngClass="app-navbar" mat-tab-nav-bar animationDuration="2000ms" [tabPanel]="tabPanel" [color]="'warn'">
+<nav ngClass="app-navbar" mat-tab-nav-bar animationDuration="2000ms" [color]="themePalette" [tabPanel]="tabPanel">
   <a *ngFor="let link of navLinks" mat-tab-link 
   routerLink="{{link.location}}" routerLinkActive ariaCurrentWhenActive="page"
   #rla="routerLinkActive" [active]="rla.isActive">

@@ -1,5 +1,5 @@
-@import "../../layout.scss";
-@import "../../colors.scss";
+@use "../../layout.scss";
+@use "../../colors.scss";
 
 .about-me {
     &__container {
@@ -8,20 +8,20 @@
         align-items: center;
 
         div {
-            margin: $base-padding 0;
+            margin: layout.$base-padding 0;
         }
 
         &_text {
-            color: $main-text-color;
-            font-size: $main-font-size;
+            color: colors.$main-text-color;
+            font-size: layout.$main-font-size;
             max-width: 500px;
             word-break: normal;
             letter-spacing: normal;
             line-height: normal;
-            padding: 0 $base-padding-3x;
+            padding: 0 layout.$base-padding-3x;
 
             &--active {
-                color: $highlighted-text-color;
+                color: colors.$highlighted-text-color;
             }
         }
     }
@@ -30,14 +30,14 @@
         width: 300px;
         height: 300px;
         border-radius: 25%;
-        padding: $base-padding;
+        padding: layout.$base-padding;
     }
 }
 
 @media screen and (max-width: 960px) {
     .about-me {
         &__container {
-            margin-top: $base-padding-2x;
+            margin-top: layout.$base-padding-2x;
             align-items: center;
             flex-direction: column;
             justify-content: center;

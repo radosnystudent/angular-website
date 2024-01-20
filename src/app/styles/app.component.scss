@@ -1,28 +1,28 @@
-@import "./colors.scss";
-@import "./layout.scss";
+@use "colors.scss";
+@use "layout.scss";
 
 .app-navbar {
     display: flex;
     width: 100%;
 
     a {
-        padding: 0 $base-padding;
-        margin: 0 $base-padding;
-        font-size: $title-font-size;
+        padding: 0 layout.$base-padding;
+        margin: 0 layout.$base-padding;
+        font-size: layout.$title-font-size;
 
         .mat-icon {
-            font-size: $title-font-size;
+            font-size: layout.$title-font-size;
             height: 100%;
             width: 100%;
         }
     }
 
     .mat-mdc-tab-link .mdc-tab__text-label {
-        color: $white-color;
+        color: colors.$white-color;
     }
 
     .flag {
-        font-size: $main-font-size;
+        font-size: layout.$main-font-size;
         cursor: pointer;
     }
 }
@@ -36,7 +36,7 @@
         }
         
         .flag {
-            font-size: $description-font-size;
+            font-size: layout.$description-font-size;
         }
     }
 }

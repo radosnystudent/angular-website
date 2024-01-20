@@ -1,4 +1,4 @@
-@import "../../layout.scss";
+@use "../../layout.scss";
 
 .pizza-calculator {
     display: flex;
@@ -7,7 +7,7 @@
     height: 100%;
 
     form {
-        padding: $base-padding-4x $base-padding;
+        padding: layout.$base-padding-4x layout.$base-padding;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -21,14 +21,14 @@
             .pizza-calculator__form-column {
                 display: flex;
                 flex-direction: column;
-                padding: $base-padding-2x;
+                padding: layout.$base-padding-2x;
             }
         }
     }
 
     &__form-row {
         .mat-mdc-form-field {
-            padding: $base-padding $base-padding-2x;
+            padding: layout.$base-padding layout.$base-padding-2x;
         }
     }
 

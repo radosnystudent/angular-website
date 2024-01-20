@@ -1,20 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "./app/styles/app.component.scss";
-@import "./app/styles/pages/main-app/main-app.component.scss";
-@import "./app/styles/pages/about-me/about-me.component.scss";
-@import "./app/styles/pages/pizza-calculator/pizza-calculator.component.scss";
-@import "./app/styles/colors.scss";
-@import "./app/styles/layout.scss";
-@import "./app/styles/components/core/card.component.scss";
-@import "./app/styles/components/core/card-field.component.scss";
+@use "app/styles/app.component.scss";
+@use "app/styles/pages/main-app/main-app.component.scss";
+@use "app/styles/pages/about-me/about-me.component.scss";
+@use "app/styles/pages/pizza-calculator/pizza-calculator.component.scss";
+@use "app/styles/colors.scss";
+@use "app/styles/layout.scss";
+@use "app/styles/components/core/card.component.scss";
+@use "app/styles/components/core/card-field.component.scss";
 
 html {
     padding: 1em 1em;
     margin: auto;
     line-height: 1.75;
     font-size: 1.25em;
-    background: linear-gradient(0deg, #04fafd, 5%, #119dff, 50%, #030423);
+    //background: linear-gradient(0deg, #04fafd, 5%, #119dff, 50%, #030423);
+    background-color: colors.$main-dark-color;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -24,6 +25,39 @@ h1,h2,h3,h4,h5,h6 {
 nav,p,ul,ol {
     margin-bottom: 2em;
     font-family: sans-serif;
+
+    .app-navbar .mat-mdc-tab-link .mdc-tab__text-label {
+        color: colors.$main-text-color;
+    }
+
+    .mat-mdc-tab-link:hover .mdc-tab__text-label {
+        color: colors.$main-text-color;
+    }
+
+    .mat-mdc-tab-link.mdc-tab--active .mdc-tab__text-label {
+        color: colors.$main-text-color;
+    }
+
+    .mat-mdc-tab-link.mdc-tab--active:hover .mdc-tab__text-label {
+        color: colors.$highlighted-text-color;
+    }
+
+    .mat-mdc-tab-group.mat-warn, .mat-mdc-tab-nav-bar.mat-warn {
+        --mdc-tab-indicator-active-indicator-color: $highlighted-text-color !important;
+    }
+}
+
+.mat-tab-link.mat-tab-label-active::after {
+    background-color: colors.$highlighted-text-color !important;
+    color: colors.$highlighted-text-color !important;
+}
+
+.mdc-tab .mat-mdc-tab-link .mat-mdc-focus-indicator .mdc-tab--active .mdc-tab-indicator--active {
+    --mdc-tab-indicator-active-indicator-color: $highlighted-text-color !important;
+}
+
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+    --mdc-tab-indicator-active-indicator-color: $highlighted-text-color !important;
 }
 
 html, body { height: 100%; }
@@ -39,12 +73,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .loader {
     border: 16px solid #f3f3f3;
-    border-top: 16px solid $highlighted-text-color;
+    border-top: 16px solid colors.$highlighted-text-color;
     border-radius: 50%;
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
 }
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -56,7 +91,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @media screen and (max-width: 960px) {
     html {
-        padding: $base-padding;
+        padding: layout.$base-padding;
     }
 
     html, body {

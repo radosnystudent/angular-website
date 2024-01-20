@@ -1,28 +1,28 @@
-@import "../../colors.scss";
-@import "../../layout.scss";
+@use "../../colors.scss";
+@use "../../layout.scss";
 
 .card-field {
     display: flex;
-    margin: $base-padding-4x $base-padding;
+    margin: layout.$base-padding-4x layout.$base-padding;
 
     &__label-container {
         display: flex;
         flex-direction: column;
-        margin-right: $base-padding;
+        margin-right: layout.$base-padding;
     }
 
     &__label {
-        color: $main-text-color;
-        font-size: $main-font-size;
+        color: colors.$main-text-color;
+        font-size: layout.$main-font-size;
 
         &-description {
-            font-size: $description-font-size;
-            color: $border-light-color;
+            font-size: layout.$description-font-size;
+            color: colors.$border-light-color;
         }
     }
 
     &__value {
-        color: $highlighted-text-color;
-        font-size: $field-value-font-size;
+        color: colors.$highlighted-text-color;
+        font-size: layout.$field-value-font-size;
     }
 }
