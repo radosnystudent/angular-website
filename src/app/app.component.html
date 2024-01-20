@@ -1,10 +1,14 @@
-<nav ngClass="app-navbar" mat-tab-nav-bar animationDuration="2000ms" [color]="themePalette" [tabPanel]="tabPanel">
-  <a *ngFor="let link of navLinks" mat-tab-link 
-  routerLink="{{link.location}}" routerLinkActive ariaCurrentWhenActive="page"
-  #rla="routerLinkActive" [active]="rla.isActive">
-    <mat-icon *ngIf="showNavIcon" matTooltip="{{link.translation | translate}}">{{link.icon}}</mat-icon>
-    <span *ngIf="!showNavIcon">{{link.translation| translate}}</span>
-</a>
+<nav ngClass="app-navbar" mat-tab-nav-bar animationDuration="2000ms" [backgroundColor]="background" [tabPanel]="tabPanel">
+  @for (link of navLinks; track $index) {
+    <a mat-tab-link routerLink="{{link.location}}" 
+    routerLinkActive 
+    ariaCurrentWhenActive="page"
+    #rla="routerLinkActive" 
+    [active]="rla.isActive">
+      <mat-icon *ngIf="showNavIcon" matTooltip="{{link.translation | translate}}">{{link.icon}}</mat-icon>
+      <span *ngIf="!showNavIcon">{{link.translation| translate}}</span>
+    </a>
+  }
 
   <span class="flag" [ngClass]="currentLanguage === 'en' ? 'fi fi-gb' : 'fi fi-pl'" (click)="switchLanguage()"></span>
 </nav>

@@ -27,37 +27,25 @@ nav,p,ul,ol {
     font-family: sans-serif;
 
     .app-navbar .mat-mdc-tab-link .mdc-tab__text-label {
-        color: colors.$main-text-color;
+        color: colors.$main-text-color !important;
     }
 
     .mat-mdc-tab-link:hover .mdc-tab__text-label {
-        color: colors.$main-text-color;
+        color: colors.$main-text-color !important;
     }
 
     .mat-mdc-tab-link.mdc-tab--active .mdc-tab__text-label {
-        color: colors.$main-text-color;
+        color: colors.$main-text-color !important;
     }
 
     .mat-mdc-tab-link.mdc-tab--active:hover .mdc-tab__text-label {
-        color: colors.$highlighted-text-color;
-    }
-
-    .mat-mdc-tab-group.mat-warn, .mat-mdc-tab-nav-bar.mat-warn {
-        --mdc-tab-indicator-active-indicator-color: $highlighted-text-color !important;
+        color: colors.$highlighted-text-color !important;
     }
 }
 
-.mat-tab-link.mat-tab-label-active::after {
-    background-color: colors.$highlighted-text-color !important;
+.mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+    border-color: colors.$highlighted-text-color !important;
     color: colors.$highlighted-text-color !important;
-}
-
-.mdc-tab .mat-mdc-tab-link .mat-mdc-focus-indicator .mdc-tab--active .mdc-tab-indicator--active {
-    --mdc-tab-indicator-active-indicator-color: $highlighted-text-color !important;
-}
-
-.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
-    --mdc-tab-indicator-active-indicator-color: $highlighted-text-color !important;
 }
 
 html, body { height: 100%; }

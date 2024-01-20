@@ -31,7 +31,6 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 export class AppComponent implements OnInit {
   showNavIcon: boolean = false;
   currentLanguage: string = '';
-  themePalette: ThemePalette = 'primary';
   navLinks = [
     { location: '/main', translation: 'navigation.homepage', icon: 'menu' },
     {
@@ -45,6 +44,7 @@ export class AppComponent implements OnInit {
       icon: 'account_circle',
     },
   ];
+  readonly background: ThemePalette = undefined;
   private readonly translateService: TranslationService =
     inject(TranslationService);
   private readonly breakpointObserver: BreakpointObserver =
