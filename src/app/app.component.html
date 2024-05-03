@@ -1,6 +1,7 @@
 <nav ngClass="app-navbar" mat-tab-nav-bar animationDuration="2000ms" [backgroundColor]="background" [tabPanel]="tabPanel">
   @for (link of navLinks; track $index) {
-    <a mat-tab-link routerLink="{{link.location}}" 
+    <a mat-tab-link 
+    routerLink="{{link.location}}" 
     routerLinkActive 
     ariaCurrentWhenActive="page"
     #rla="routerLinkActive" 

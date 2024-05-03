@@ -5,10 +5,17 @@ import { Languages } from './spec';
 import { ThemePalette } from '@angular/material/core';
 import { TranslatePipe } from './common/pipes/translate.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgClass, NgFor, NgIf } from '@angular/common';
+
+interface NavLinkElement {
+  location: string;
+  translation: string;
+  icon: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -23,6 +30,7 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
     RouterLink,
     NgIf,
     MatIconModule,
+    MatMenuModule,
     MatTooltipModule,
     RouterOutlet,
     TranslatePipe,
@@ -31,17 +39,12 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 export class AppComponent implements OnInit {
   showNavIcon: boolean = false;
   currentLanguage: string = '';
-  readonly navLinks = [
+  readonly navLinks: NavLinkElement[] = [
     { location: '/main', translation: 'navigation.homepage', icon: 'menu' },
     {
       location: '/pizza',
       translation: 'navigation.pizzaCalculator',
       icon: 'local_pizza',
-    },
-    {
-      location: '/about-me',
-      translation: 'navigation.aboutMe',
-      icon: 'account_circle',
     },
   ];
   readonly background: ThemePalette = undefined;

@@ -1,17 +1,13 @@
-<div class="wrapper">
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
+<sw-card class="homepage" [title]="'homepage.title'">
+  <div content class="homepage__container">
+      <img [src]="image.path" [alt]="image.alt"/>
+      <div class="homepage__container_text">
+          <div class="homepage__container_text--active">{{'homepage.aboutMe.part1' | translate}}</div>
+          <div>{{'homepage.aboutMe.part2' | translate}}</div>
+          <div>{{'homepage.aboutMe.part3' | translate}}</div>
+      </div>
   </div>
+  <div below>
+    <sw-bubbles [numberOfBubbles]="15"></sw-bubbles>
+  </div>
+</sw-card>
