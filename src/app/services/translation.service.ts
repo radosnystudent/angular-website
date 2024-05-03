@@ -6,7 +6,7 @@ import { Languages, Translations } from '../spec';
 @Injectable({ providedIn: 'root' })
 export class TranslationService {
   public languages: string[] = [Languages.En, Languages.Pl];
-  public language: string = Languages.En;
+  public language: string = Languages.Pl;
   private translations: Translations = {};
   private readonly httpClient: HttpClient = inject(HttpClient);
 
@@ -18,8 +18,8 @@ export class TranslationService {
         catchError(error => {
           return throwError(() => new Error(error));
         }),
-        tap((reponse: Translations) => {
-          this.translations = reponse;
+        tap((response: Translations) => {
+          this.translations = response;
         })
       );
 

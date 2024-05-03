@@ -2,12 +2,12 @@
 
 @use "app/styles/app.component.scss";
 @use "app/styles/pages/main-app/main-app.component.scss";
-@use "app/styles/pages/about-me/about-me.component.scss";
 @use "app/styles/pages/pizza-calculator/pizza-calculator.component.scss";
 @use "app/styles/colors.scss";
 @use "app/styles/layout.scss";
 @use "app/styles/components/core/card.component.scss";
 @use "app/styles/components/core/card-field.component.scss";
+@use "app/styles/components/visuals/bubbles.component.scss";
 
 html {
     padding: 1em 1em;
