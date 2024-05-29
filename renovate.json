@@ -8,7 +8,8 @@
   "reviewers": ["radosnystudent"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["patch", "pin"],
+      "matchUpdateTypes": ["patch", "pin", "minor"],
+      "matchCurrentVersion": "!/^0/",
       "automerge": true
     },
     {
