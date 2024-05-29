@@ -17,6 +17,10 @@
       "addLabels": ["npm"]
     }
   ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
   "labels": ["dependencies"],
   "prConcurrentLimit": 20,
   "schedule": [
