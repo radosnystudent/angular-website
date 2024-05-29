@@ -5,7 +5,6 @@
   ],
   "prHourlyLimit": 10,
   "rebaseWhen": "behind-base-branch",
-  "reviewers": ["radosnystudent"],
   "packageRules": [
     {
       "matchUpdateTypes": ["patch", "pin", "minor"],
