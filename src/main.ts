@@ -8,7 +8,10 @@ import { AppComponent } from './app/app.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
-import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http';
+import {
+  withInterceptorsFromDi,
+  provideHttpClient,
+} from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { TemplateTitleService, TranslationService } from './app/services';
