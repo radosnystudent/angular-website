@@ -27,6 +27,7 @@
     "@netlify/functions": "^2.4.1",
     "@sindresorhus/is": "^6.1.0",
     "axios": "^1.6.4",
+    "eslint": "^8.57.0",
     "flag-icons": "^7.1.0",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
