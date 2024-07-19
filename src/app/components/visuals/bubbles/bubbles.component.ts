@@ -1,5 +1,5 @@
 import { Component, effect, input } from '@angular/core';
-import { isNumber } from '@sindresorhus/is';
+import { isNumber, isUndefined } from '@sindresorhus/is';
 
 @Component({
   selector: 'sw-bubbles',
@@ -25,7 +25,9 @@ export class BubblesComponent {
     this.bubbles = [];
   }
 
-  private fillBubbles(n: number): void {
+  private fillBubbles(n: number | undefined): void {
+    if (isUndefined(n)) return;
+
     for (let i = 0; i < n; i++) {
       this.bubbles.push('<span class="dot"></span>');
     }
