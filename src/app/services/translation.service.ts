@@ -18,8 +18,8 @@ export class TranslationService {
         catchError(error => {
           return throwError(() => new Error(error));
         }),
-        tap((reponse: Translations) => {
-          this.translations = reponse;
+        tap((response: Translations) => {
+          this.translations = response;
         })
       );
 
