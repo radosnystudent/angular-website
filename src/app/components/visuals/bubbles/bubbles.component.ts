@@ -15,11 +15,19 @@ export class BubblesComponent {
     effect(() => {
       const n = this.numberOfBubbles();
       if (isNumber(n)) {
-        this.bubbles = [];
-        for (let i = 0; i < n; i++) {
-          this.bubbles.push('<span class="dot"></span>');
-        }
+        this.resetBubbles();
+        this.fillBubbles(n);
       }
     });
+  }
+
+  private resetBubbles(): void {
+    this.bubbles = [];
+  }
+
+  private fillBubbles(n: number): void {
+    for (let i = 0; i < n; i++) {
+      this.bubbles.push('<span class="dot"></span>');
+    }
   }
 }

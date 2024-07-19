@@ -2,8 +2,10 @@
     "en": {
         "homepage.title": "About me",
         "homepage.aboutMe.part1": "Hello. My name is Jeremiasz Pauszek.",
-        "homepage.aboutMe.part2": "I'm frontend developer with some experience in backend aswell.",
+        "homepage.aboutMe.part2": "I'm fullstack developer",
         "homepage.aboutMe.part3": "Currently I'm working with Angular and Java but I've touched also React and Python.",
+        "homepage.aboutMe.part4": "I am a person who eagerly learns new things and technologies. I enjoy searching for new solutions and testing different approaches to find the best possible solution for a given problem.",
+        "homepage.aboutMe.part5": "This webpage is still under development - I treat it as a place for learning and testing new things mainly related to Angular :)",
         "navigation.homepage": "Homepage",
         "navigation.aboutMe": "About me",
         "navigation.pizzaCalculator": "Pizza worth calculator",
@@ -20,9 +22,10 @@
     "pl": {
         "homepage.title": "O mnie",
         "homepage.aboutMe.part1": "Cześć. Mam na imię Jeremiasz Pauszek.",
-        "homepage.aboutMe.part2": "Jestem frontend developerem z doświadczeniem pracy z backendem.",
+        "homepage.aboutMe.part2": "Jestem fullstack developerem.",
         "homepage.aboutMe.part3": "Obecnie pracuję w technologiach Angular + Java, ale miałem styczność także z Reactem i Pythonem.",
         "homepage.aboutMe.part4": "Jestem osobą, która chętnie uczy się nowych rzeczy i technologii, lubię szukać nowych rozwiązań i testować różne podejścia, żeby znaleźć możliwie najlepsze rozwiązanie dla danego problemu.",
+        "homepage.aboutMe.part5": "Ta strona jest ciągle w budowie - traktuję ją jako miejsce do nauki i testowania nowych rzeczy związanych głównie z Angularem :)",
         "navigation.homepage": "Strona główna",
         "navigation.aboutMe": "O mnie",
         "navigation.pizzaCalculator": "Kalkulator opłacalności pizzy",

@@ -6,7 +6,7 @@ import { Languages, Translations } from '../spec';
 @Injectable({ providedIn: 'root' })
 export class TranslationService {
   public languages: string[] = [Languages.En, Languages.Pl];
-  public language: string = Languages.Pl;
+  public language: string = Languages.En;
   private translations: Translations = {};
   private readonly httpClient: HttpClient = inject(HttpClient);
 

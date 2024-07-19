@@ -66,7 +66,7 @@ export class PizzaCalculatorComponent {
     });
   }
 
-  calculate() {
+  calculate(): void {
     const finalCostFirstPizza = this.calculatePizzaCost(
       'diameter1',
       'quantity1',
