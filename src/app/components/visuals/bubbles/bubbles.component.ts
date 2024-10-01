@@ -1,5 +1,4 @@
 import { Component, effect, input } from '@angular/core';
-import { isNumber, isUndefined } from '@sindresorhus/is';
 
 @Component({
   selector: 'sw-bubbles',
@@ -14,7 +13,7 @@ export class BubblesComponent {
   constructor() {
     effect(() => {
       const n = this.numberOfBubbles();
-      if (isNumber(n)) {
+      if (typeof n === 'number') {
         this.resetBubbles();
         this.fillBubbles(n);
       }
@@ -26,7 +25,7 @@ export class BubblesComponent {
   }
 
   private fillBubbles(n: number | undefined): void {
-    if (isUndefined(n)) return;
+    if (n === undefined || n === null) return;
 
     for (let i = 0; i < n; i++) {
       this.bubbles.push('<span class="dot"></span>');
